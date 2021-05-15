@@ -1,0 +1,46 @@
+{% extends 'UserApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Регистрация - Vittar{% endblock %}
+{% block style %}{% static 'css/UserApp/registration.css' %}{% endblock %}
+
+{% block content %}
+    <div class="container__form">
+        <div class="list_error">
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <div class="full_name">
+                <img src="{% static 'img/Иконка пользователя.png' %}">
+                {{ form.full_name }}
+            </div>
+            <div class="company_name">
+                <img src="{% static 'img/Компания.png' %}">
+                {{ form.company_name }}
+            </div>
+            <div class="email">
+                <img src="{% static 'img/Почта.png' %}">
+                {{ form.email }}
+            </div>
+            <div class="phone">
+                <img src="{% static 'img/Телефон.png' %}">
+                {{ form.phone }}
+            </div>
+            <div class="password">
+                <img src="{% static 'img/Пароль.png' %}">
+                {{ form.password1 }}
+            </div>
+            <div class="password">
+                <img src="{% static 'img/Пароль.png' %}">
+                {{ form.password2 }}
+            </div>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+    </div>
+{% endblock %}

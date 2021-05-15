@@ -1,0 +1,95 @@
+{% extends 'OrderApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Главная - Vittar{% endblock %}
+{% block style %}{% static 'css/OrderApp/home.css' %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="content__main_img">
+            <img src="{% static 'img/Рисунок грузовика.png' %}">
+        </div>
+        <div class="content__headers">
+             <div class="content__header_1">
+                <p>НЕСКОЛЬКО СЛОВ О НАС</p>
+             </div>
+             <div class="content__header_2">
+                 <p>НАШИ КОНТАКТЫ</p>
+             </div>
+        </div>
+        <div class="content__info">
+             <div class="content__info_1">
+                <p>
+                    В целом, конечно, существующая теория требует определения
+                    и уточнения инновационных методов управления процессами.
+                    Лишь сторонники тоталитаризма в науке призывают нас.
+                </p>
+             </div>
+             <div class="content__info_2">
+                <h3 class="phone_number">8 (8552) 83-56-63</h3>
+                <p class="email">vittar@mail.ru</p>
+                <a href="#" class="but_back_call">Обратный звонок</a>
+             </div>
+        </div>
+        <div class="content__empty"></div>
+        <div class="content__services">
+            <div class="content__service_1">
+                <img src="{% static 'img/Услуга1.png' %}">
+                <p>Перевозки по городу</p>
+            </div>
+            <div class="content__service_2">
+                <img src="{% static 'img/Услуга2.png' %}">
+                <p>Дальние перевозки</p>
+            </div>
+            <div class="content__service_3">
+                <img src="{% static 'img/Услуга3.png' %}">
+                <p>Перевозки в другие города</p>
+            </div>
+        </div>
+        <div class="content__empty"></div>
+        <div class="content__info_about_company">
+            <h2>О компании</h2>
+            <p>
+                Значимость этих проблем настолько очевидна,
+                что выбранный нами инновационный путь однозначно
+                определяет каждого участника как способного принимать
+                собственные решения касаемо анализа существующих паттернов поведения.
+                В своём стремлении улучшить пользовательский опыт мы упускаем.
+            </p>
+        </div>
+        <div class="content__header_news">
+            <p class="news_header">Новости</p>
+            <div class="content__news">
+            <div class="content__new_1">
+                <p><span>17</span>/10/2021</p>
+                <h3>Современные
+                    технологии
+                    достигли такого
+                    уровня
+                </h3>
+                <p>
+                    Идейные соображения высшего порядка,
+                    а также укрепление и развитие внутренней структуры
+                    обеспечивает широкому кругу (специалистов)
+                </p>
+            </div>
+            <div class="content__new_2">
+                <p><span>05</span>/05/2021</p>
+                <h3>Каждый из нас понимает очевидную вещь</h3>
+                <p>
+                    С учётом сложившейся международной обстановки, синтетическое тестирование.
+                </p>
+            </div>
+        </div>
+        </div>
+        <div class="content__header_promo">
+            <p class="promo_header">Акции</p>
+            <div class="content__promo">
+            <img src="{% static 'img/Акция.jpg' %}">
+            <h3>Принимая во внимание показатели успешности</h3>
+            <p>И нет сомнений, что диаграммы связей набирают популярность среди определенных слоев населения.</p>
+        </div>
+        </div>
+    </div>
+{% endblock %}

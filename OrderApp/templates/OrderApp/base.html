@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/OrderApp/base.css' %}">
+        <link rel="stylesheet" href="{% block style %}{% endblock %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <div class="header__body">
+                        <a href="/" class="header__logo">Vittar</a>
+                        <div class="header__burger">
+                            <span></span>
+                        </div>
+                        <nav class="header__menu">
+                            <ul class="header__list">
+                                <li>
+                                    <a href="#" class="header__link">Услуги</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">Услуги</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">Новости</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">Контакты</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="header__link">
+                                        <img src="{% static 'img/Иконка пользователя.png' %}" alt="">
+                                        {% if user.is_authenticated %}
+                                            {{ user.full_name }}
+                                        {% else %}
+                                            Вход
+                                        {% endif %}
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            {% block content %}
+            {% endblock %}
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer__body">
+                        <a href="/" class="footer__logo">Vittar</a>
+                        <div class="footer__menu">
+                            <div class="contact">
+                                <p>+7 (939) 397-10-42</p>
+                                <p>support@carro.ru</p>
+                                <p>Автомобилей: 24</p>
+                            </div>
+                            <div class="footer__menu_1">
+                                <ul>
+                                    <li>
+                                        <p class="footer__links__header">Компания</p>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">Вакансии</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer__menu_2">
+                                <ul>
+                                    <li>
+                                        <p class="footer__links__header">Компания</p>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">Вакансии</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer__menu_3">
+                                <ul>
+                                    <li>
+                                        <p class="footer__links__header">Компания</p>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="footer__links">Вакансии</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__social_networks">
+                            <a href="#"><img src="{% static 'img/vk-logo.png' %}" alt=""></a>
+                            <a href="#"><img src="{% static 'img/instagram-logo.png' %}" alt=""></a>
+                            <a href="#"><img src="{% static 'img/facebook-logo.png' %}" alt=""></a>
+                            <a href="#"><img src="{% static 'img/twitter-logo.png' %}" alt=""></a>
+                        </div>
+                        <div class="footer__copyright">Vittar 2021</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Скрипты сайта -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{% static 'js/base.js' %}"></script>
+    </body>
+</html>

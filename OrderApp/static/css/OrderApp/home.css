@@ -1,0 +1,321 @@
+.content {
+    padding: 130px 0px 0px 0px;
+    display: grid;
+    grid-template-columns: 55% 19% 26%;
+    margin: 0 auto;
+    max-width: 1180px;
+    margin-bottom: 30px;
+}
+
+/* Убрать
+
+.content div {
+    border: 2px solid red;
+} */
+
+.content__main_img {
+
+}
+
+.content__main_img img {
+    width: 580px;
+}
+
+.content__headers, .content__info {
+    display: grid;
+    grid-auto-rows: 50% 50%;
+}
+
+.content__headers {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.content__header_1 {
+    color: #FFB800;
+}
+
+.content__header_2 {
+    color: #8D8D8D;
+}
+
+.content__info {
+
+}
+
+.content__info_1 {
+    font-size: 19px;
+    color: #565656;
+}
+
+.content__info_2 {
+    height: 100%;
+}
+
+.content__info_2 .phone_number {
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+.content__info_2 .email {
+    color: #192BD3;
+    font-size: 20px;
+}
+
+.content__info_2 .but_back_call {
+    color: #FFF;
+    display: inline-block;
+    background-color: #FFB800;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 3px 19px 3px 18px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.content__info_2 .but_back_call:hover {
+    background-color: #e9b11f;
+}
+
+.content__services {
+    grid-column: span 2;
+    display: flex;
+    text-align: center;
+    color: #FFF;
+    line-height: 18px;
+}
+
+.content__services > div {
+    display: inline-block;
+    width: 177px;
+    margin: 0 auto;
+}
+
+.content__service_1 {
+    background-color: #B7DD38;
+}
+
+.content__service_2 {
+    background-color: #9149D3;
+}
+
+.content__service_3 {
+    background-color: #48C0D9;
+}
+
+.content__service_3 img {
+    width: 100px;
+}
+
+.content__info_about_company {
+    grid-column: span 2;
+}
+
+.content__info_about_company h2 {
+    margin-top: 10px;
+}
+
+.content__info_about_company p {
+    color: #484848;
+    font-size: 18px;
+    line-height: 20px;
+    text-indent: 25px;
+    margin-top: 10px;
+}
+
+.content__header_news .news_header {
+    border-bottom: 3px solid #FFB800;
+    font-size: 28px;
+    margin-right: 20px;
+    color: #FFB800;
+    margin-top: 20px;
+}
+
+.content__news {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 10px;
+}
+
+.content__new_1 {
+    margin-right: 20px;
+}
+
+.content__new_1 p, .content__new_2 p {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.content__new_1 p span, .content__new_2 p span {
+    font-size: 30px;
+}
+
+.content__new_1 h3, .content__new_2 h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+.content__header_promo {
+    grid-column: span 2;
+}
+
+.content__header_promo .promo_header {
+    border-bottom: 3px solid #9149D3;
+    font-size: 28px;
+    color: #9149D3;
+    margin-top: 20px;
+}
+
+
+.content__promo {
+    grid-column: span 2;
+    padding: 10px;
+}
+
+.content__promo img {
+    float: left;
+    width: 210px;
+    margin-right: 10px;
+}
+
+.content__promo h3 {
+    font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.content__promo p {
+    font-size: 20px;
+    display: block;
+}
+
+
+
+
+@media (max-width: 787px) {
+    .content {
+        grid-template-columns: 50% 50%;
+        grid-gap: 10px;
+    }
+
+    .content__main_img {
+        display: none;
+    }
+
+    .content__header_2 {
+        height: 140px;
+    }
+
+    .content__info {
+        margin-bottom: 10vw;
+    }
+
+    .content__info_1 {
+        height: 70vw;
+    }
+
+    .content__info_1 p {
+        font-size: 14px;
+    }
+
+    .content__info_2 {
+        height: 100%;
+        margin-top: 18vw;
+    }
+
+    .content__info_2 .phone_number {
+        font-size: 18px;
+    }
+
+    .content__info_2 .but_back_call {
+        margin: 0;
+        font-size: 18px;
+    }
+
+
+    .content__empty {
+        display: none;
+    }
+
+    .content__info_about_company {
+        grid-column: span 1;
+    }
+
+
+    .content__services {
+        grid-column: span 1;
+    }
+
+    .content__services {
+        display: block;
+    }
+
+    .content__header_news {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 1048px) {
+    .content {
+        grid-template-columns: 50% 50%;
+        grid-gap: 10px;
+    }
+
+    .content__main_img {
+        display: none;
+    }
+
+    .content__header_2 {
+        height: 20px;
+    }
+
+    .content__info {
+
+    }
+
+    .content__info_1 {
+        height: 10vw;
+    }
+
+    .content__info_1 p {
+        font-size: 14px;
+    }
+
+    .content__info_2 {
+        height: 100%;
+    }
+
+    .content__info_2 .phone_number {
+        font-size: 18px;
+    }
+
+    .content__info_2 .but_back_call {
+        margin: 0;
+        font-size: 18px;
+    }
+
+
+    .content__empty {
+        display: none;
+    }
+
+    .content__info_about_company {
+        grid-column: span 1;
+    }
+
+
+    .content__services {
+        grid-column: span 1;
+    }
+
+    .content__services {
+        display: block;
+    }
+
+    .content__header_news {
+        grid-column: span 2;
+    }
+}
+

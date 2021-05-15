@@ -1,0 +1,67 @@
+.container__form {
+    margin-top: 50px;
+    position: relative;
+
+}
+
+.list_error {
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    width: 400px;
+    color: red;
+    font-size: 12px;
+}
+
+form {
+    text-align: center;
+}
+
+.full_name, .company_name, .phone, .email, .password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.full_name img, .company_name img, .phone img, .email img, .password img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+.full_name input, .company_name input, .phone input, .email input, .password input {
+    width: 250px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #b0b0b0;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+input[type='submit'] {
+    color: #FFF;
+    background-color: #FFB800;
+    padding: 10px 40px;
+    font-size: 28px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.form__links a:last-child {
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .full_name input, .company_name input, .phone input, .email input, .password input {
+        width: 350px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+
+    input[type='submit'] {
+        padding: 20px 60px;
+        font-size: 36px;
+    }
+}

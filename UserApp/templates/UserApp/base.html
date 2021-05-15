@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/UserApp/base.css' %}">
+        <link rel="stylesheet" href="{% block style %}{% endblock %}">
+    </head>
+    {% static 'img/Фон.jpg' as bg %}
+    <body style="background-image: url({{ bg }})">
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <div class="header__body">
+                        <a href="/" class="header__logo">Vittar</a>
+                    </div>
+                </div>
+            </header>
+            <div class="form__container">
+                <div class="form__links">
+                    <a href="{% url 'login' %}">Вход</a>
+                    <a href="{% url 'registration' %}">Регистрация</a>
+                </div>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'UserApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Вход - Vittar{% endblock %}
+{% block style %}{% static 'css/UserApp/login.css' %}{% endblock %}
+
+{% block content %}
+    <div class="container__form">
+        <div class="list_error">
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <div class="email">
+                <img src="{% static 'img/Иконка пользователя.png' %}">
+                {{ form.username }}
+            </div>
+            <div class="password">
+                <img src="{% static 'img/Пароль.png' %}">
+                {{ form.password }}
+            </div>
+            <div class="reset_password">
+                <a href="#">Восстановить пароль</a>
+            </div>
+            <input type="submit" value="Войти">
+        </form>
+    </div>
+{% endblock %}
