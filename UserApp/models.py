@@ -41,7 +41,7 @@ class User(AbstractUser):
     full_name = models.CharField(max_length=100, verbose_name='ФИО')
     email = models.EmailField(_('email address'), unique=True)
     company_name = models.CharField(max_length=100, blank=True, null=True, verbose_name='Название компании')
-    phone = models.CharField(max_length=12, verbose_name='Номер телефона')
+    phone = models.CharField(max_length=17, verbose_name='Номер телефона')
 
     objects = UserManager()
 

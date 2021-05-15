@@ -21,10 +21,14 @@
                         <nav class="header__menu">
                             <ul class="header__list">
                                 <li>
-                                    <a href="#" class="header__link">Услуги</a>
+                                    {% if user.is_staff %}
+                                        <a href="{% url 'all_orders' %}" class="header__link">Заказы</a>
+                                    {% else %}
+                                        <a href="{% url 'order_form' %}" class="header__link">Заказть услугу</a>
+                                    {% endif %}
                                 </li>
                                 <li>
-                                    <a href="#" class="header__link">Услуги</a>
+                                    <a href="#" class="header__link">О компании</a>
                                 </li>
                                 <li>
                                     <a href="#" class="header__link">Новости</a>
@@ -33,15 +37,39 @@
                                     <a href="#" class="header__link">Контакты</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="header__link">
-                                        <img src="{% static 'img/Иконка пользователя.png' %}" alt="">
-                                        {% if user.is_authenticated %}
+                                    {% if user.is_authenticated %}
+                                        <a class="header__link profile">
+                                            <img src="{% static 'img/Иконка пользователя.png' %}" alt="">
                                             {{ user.full_name }}
+                                        </a>
                                         {% else %}
+                                        <a href="{% url 'login' %}" class="header__link">
+                                            <img src="{% static 'img/Иконка пользователя.png' %}" alt="">
                                             Вход
+                                        </a>
                                         {% endif %}
-                                    </a>
                                 </li>
+                                <!-- Выпадающее меню -->
+                                <div class="inside__links">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="inside__link">
+                                                Профиль
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'user_orders' %}" class="inside__link">
+                                                Мои заказы
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'logout' %}" class="inside__link">
+                                                Выйти
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- -->
                             </ul>
                         </nav>
                     </div>

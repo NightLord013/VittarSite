@@ -8,7 +8,7 @@ ORDER_STAGE = (
 )
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_orders', verbose_name='Заказчик')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name='user_orders', verbose_name='Заказчик')
     departure_address = models.CharField(max_length=100, verbose_name='Адрес отправки')
     delivery_address = models.CharField(max_length=100, verbose_name='Адрес доствки')
     cargo_name = models.CharField(max_length=100, verbose_name='Описание груза')

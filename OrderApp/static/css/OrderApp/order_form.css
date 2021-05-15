@@ -1,0 +1,146 @@
+.content {
+    padding: 130px 0px 0px 0px;
+    display: grid;
+    margin: 0 auto;
+    max-width: 1180px;
+    margin-bottom: 30px;
+}
+
+
+.content__header {
+    overflow: hidden;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content__header span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.content__header:before,
+.content__header:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 3px;
+    background-color: black;
+    position: relative;
+}
+
+.content__header:before {
+    margin-left: -100%;
+    left: -2px;
+}
+
+.content__header:after {
+    margin-right: -100%;
+    right: -2px;
+}
+
+.content__body {
+    width: 90%;
+    margin: auto;
+}
+
+form p{
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.depature-delivery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.depature-delivery img {
+    width: 40px;
+    height: 40px;
+}
+
+.depature, .delivery {
+    display: inline-block;
+    border: 3px solid #C4C4C4;
+    padding: 20px;
+
+}
+
+.delivery {
+}
+
+.depature input, .delivery input, .cargo_description input {
+    width: 320px;
+    height: 35px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.cargo_description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+sup {
+    vertical-align: baseline; position: relative; top: -0.4em;
+}
+
+.adding_requirements {
+    margin-bottom: 25px;
+}
+
+.adding_requirements textarea{
+    resize: none;
+    width: 700px;
+}
+
+.checkbox {
+    margin-bottom: 25px;
+}
+
+.checkbox input{
+    transform:scale(1.3);
+    opacity:0.9;
+    cursor:pointer;
+    margin-right: 10px;
+}
+
+.submit {
+    width: 100%;
+    text-align: center;
+}
+
+input[type="submit"]{
+    background-color: #FFB800;
+    color: #FFF;
+    font-size: 25px;
+    padding: 10px 10px 10px 10px;
+}
+
+@media (max-width: 767px) {
+    .depature-delivery {
+        display: block;
+        justify-content: normal;
+    }
+
+    .depature-delivery img {
+        display: none;
+    }
+
+    .depature, .delivery {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .cargo_description {
+        display: block;
+    }
+
+    .adding_requirements textarea {
+        width: 320px;
+    }
+}

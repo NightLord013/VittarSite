@@ -28,7 +28,7 @@ html, body {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 50;
+    z-index: 5;
     margin-bottom: 20px;
 }
 
@@ -95,6 +95,30 @@ html, body {
 
 .header__link:hover {
     color: #565656;
+}
+
+.inside__links {
+    display: none;
+    width: 110px;
+    background-color: #b1b1b1;
+    position: absolute;
+    right: 45px;
+    top: 25px;
+    z-index: 6;
+    color: black;
+    text-align: center;
+}
+
+.inside__links li {
+    list-style: none;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.inside__link {
+    text-decoration: none;
+    color: black;
 }
 
 
@@ -240,6 +264,19 @@ html, body {
     }
 
     .header__link {
+        font-size: 24px;
+    }
+
+    .inside__links {
+        display: none;
+        position: static;
+        background-color: #62ef82;
+        width: 145px;
+        text-align: left;
+    }
+
+    .inside__link {
+        margin: 0;
         font-size: 24px;
     }
 

@@ -1,0 +1,71 @@
+{% extends 'OrderApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Главная - Vittar{% endblock %}
+{% block style %}{% static 'css/OrderApp/order_form.css' %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h3 class="content__header">
+            <span>Заказть доставку</span>
+        </h3>
+        <div class="content__body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.user }}
+                <div class="depature-delivery">
+                    <div class="depature">
+                        <div class="departure_address">
+                            <p>Укажите начальную точку:</p>
+                            {{ form.departure_address }}
+                        </div>
+                        <div class="cargo_loading_date">
+                            <p>Дата загрузки груза:</p>
+                            {{ form.cargo_loading_date }}
+                        </div>
+                        <div class="cargo_loading_time">
+                            <p>Время загрузки груза:</p>
+                            {{ form.cargo_loading_time }}
+                        </div>
+                    </div>
+                    <img src="{% static 'img/Иконка _Поменять местами_.png' %}">
+                    <div class="delivery">
+                        <div class="delivery_address">
+                            <p>Укажите конечную точку:</p>
+                            {{ form.delivery_address }}
+                        </div>
+                        <div class="cargo_unloading_date">
+                            <p>Дата выгрузки груза:</p>
+                            {{ form.cargo_unloading_date }}
+                        </div>
+                        <div class="cargo_unloading_time">
+                            <p>Время выгрузки груза:</p>
+                            {{ form.cargo_unloading_time }}
+                        </div>
+                    </div>
+                </div>
+                <div class="cargo_description">
+                    <div class="cargo_name">
+                        <p>Описание груза:</p>
+                        {{ form.cargo_name }}
+                    </div>
+                    <div class="cargo_weight">
+                        <p>Введите массу груза, кг:</p>
+                        {{ form.cargo_weight }}
+                    </div>
+                    <div class="cargo_volume">
+                        <p>Введите объем груза, м<sup>2</sup>:</p>
+                        {{ form.cargo_volume }}
+                    </div>
+                </div>
+                <div class="adding_requirements">
+                    <p>Дополнительные требования:</p>
+                    {{ form.additional_requirements }}
+                </div>
+                <div class="checkbox"><input type="checkbox" required>Я согласен с условиями обработки персональных данных</div>
+                <div class="submit"><input type="submit" value="Оформить заказ"></div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
