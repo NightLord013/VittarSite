@@ -42,7 +42,7 @@
 
 .order {
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 15% 68% 17%;
     border: 2px solid black;
     margin-bottom: 10px;
     color: black;
@@ -89,7 +89,8 @@
     color: #b0b0b0;
     display: flex;
     align-items: center;
-    width: 190px;
+    width: 180px;
+    margin-right: 20px;
 }
 
 .order__block_3 p:last-child img {
@@ -107,5 +108,12 @@
 @media (max-width: 767px) {
     .order {
         grid-template-columns: none;
+    }
+}
+
+@media (max-width: 1030px) {
+    .order__block_3 p:last-child {
+        width: 120px;
+        margin-right: 20px;
     }
 }

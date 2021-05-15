@@ -13,44 +13,10 @@
         </h3>
         <div class="content__body">
             <div class="orders">
-                {% for order in orders %}
-                    <a href="#" class="order">
-                        <div class="order__block_1">
-                            <p
-                            {% if order.order_stage == 'В' %}
-                                class="processing"
-                            {% elif order.order_stage == 'П' %}
-                                class="accepted"
-                            {% elif order.order_stage == 'О' %}
-                                class="denied"
-                            {% endif %}
-                            >{{ order.get_order_stage_display }}</p>
-                            <img src="{% static 'img/Иконка грузовика.png' %}">
-                            <p>{{ order.cargo_weight }} кг. / {{ order.cargo_volume }} м<sup>2</sup></p>
-                        </div>
-                        <div class="order__block_2">
-                            <div class="order__block_2_1">
-                                <p>{{ order.departure_address }} - {{ order.delivery_address }}</p>
-                            </div>
-                            <div class="order__block_2_2">
-                                <p>Описание груза: {{ order.cargo_name }}</p>
-                            </div>
-                            <div class="order_block_2_3">
-                                <p>Заказчик: {{ order.user.full_name }} ({{ order.user.company_name }})</p>
-                                <p>E-mail: {{ order.user }}</p>
-                                <p>Телефон: {{ order.user.phone }}</p>
-                            </div>
-                        </div>
-                        <div class="order__block_3">
-                            <p class="number">№ {{ order.id|rightzeros }}</p>
-                            <img src="{% static 'img/Кнопка подробнее.png' %}">
-                            <p><img src="{% static 'img/Иконка часов.png' %}">{{ order.adding_datetime }}</p>
-                        </div>
-                    </a>
-                    {% empty %}
-                        <h4 class="empty">Тут пока ничего нет</h4>
-                {% endfor %}
+                {% include 'OrderApp/user_orders_ajax.html' %}
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="{% static 'js/ajax.js' %}"></script>
 {% endblock %}

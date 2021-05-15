@@ -92,4 +92,13 @@
         </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script>
+        var kiev = new DG.GeoPoint(30.523333, 50.450001);
+        var moscow = new DG.GeoPoint(37.617634, 55.755787);
+
+        var distance = DG.Utils.getDistance(kiev, moscow);
+        console.log(distance)
+    </script>
 {% endblock %}
