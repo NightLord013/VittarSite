@@ -1,5 +1,5 @@
 .content {
-    padding: 130px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
     display: grid;
     margin: 0 auto;
     max-width: 1180px;
@@ -71,12 +71,16 @@ form p{
 .delivery {
 }
 
-.depature input, .delivery input, .cargo_description input {
+.depature input, .delivery input, .distance input, .cargo_description input {
     width: 320px;
     height: 35px;
     font-size: 20px;
     padding-left: 10px;
     margin-bottom: 10px;
+}
+
+.distance {
+    margin-bottom: 25px;
 }
 
 .cargo_description {
@@ -91,11 +95,27 @@ sup {
 
 .adding_requirements {
     margin-bottom: 25px;
+    margin-right: 40px;
+    display: inline-block;
 }
 
 .adding_requirements textarea{
     resize: none;
     width: 700px;
+}
+
+.price {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+#id_price {
+    width: 100px;
+    background: none;
+    text-align: center;
+    font-size: 20px;
+    color: red;
 }
 
 .checkbox {
@@ -140,7 +160,15 @@ input[type="submit"]{
         display: block;
     }
 
+    .adding_requirements {
+        display: block;
+    }
+
     .adding_requirements textarea {
         width: 320px;
+    }
+
+    .price {
+        display: block;
     }
 }

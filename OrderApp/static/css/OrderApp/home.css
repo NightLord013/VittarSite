@@ -137,20 +137,26 @@
     margin-top: 10px;
 }
 
-.content__new_1 {
+.item {
     margin-right: 20px;
+    text-decoration: none;
+    color: black;
 }
 
-.content__new_1 p, .content__new_2 p {
+.item:hover {
+    color: #777777;
+}
+
+.item p {
     font-size: 18px;
     line-height: 25px;
 }
 
-.content__new_1 p span, .content__new_2 p span {
+.item p span {
     font-size: 30px;
 }
 
-.content__new_1 h3, .content__new_2 h3 {
+.item h3 {
     font-size: 25px;
     margin-bottom: 10px;
     margin-top: 10px;

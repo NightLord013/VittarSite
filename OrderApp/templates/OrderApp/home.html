@@ -21,9 +21,8 @@
         <div class="content__info">
              <div class="content__info_1">
                 <p>
-                    В целом, конечно, существующая теория требует определения
-                    и уточнения инновационных методов управления процессами.
-                    Лишь сторонники тоталитаризма в науке призывают нас.
+                    «Виттар» — транспортная компания, осуществляющая перевозку грузов автомобильным транспортом по России.
+                    Название «Виттар» образовано от итал. vettore — «перевозчик».
                 </p>
              </div>
              <div class="content__info_2">
@@ -51,17 +50,25 @@
         <div class="content__info_about_company">
             <h2>О компании</h2>
             <p>
-                Значимость этих проблем настолько очевидна,
-                что выбранный нами инновационный путь однозначно
-                определяет каждого участника как способного принимать
-                собственные решения касаемо анализа существующих паттернов поведения.
-                В своём стремлении улучшить пользовательский опыт мы упускаем.
+                Мы прекрасно знаем все нюансы такого процесса,
+                как грузоперевозки и доставка грузов вне зависимости
+                от маршрута следования и характеристик груза и всегда
+                обеспечиваем стабильно высокий уровень качества предоставляемых услуг по доставке грузов.
             </p>
         </div>
         <div class="content__header_news">
             <p class="news_header">Новости</p>
             <div class="content__news">
-            <div class="content__new_1">
+                {% for item in news %}
+                        <a href="#" class="item">
+                            <p class="create_date"><span>{{ item.create_date.day }}</span>/{{ item.create_date|date:'m/Y' }}</p>
+                            <h3 class="news_title">{{ item.title }}</h3>
+                            <p class="news_body">{{ item.body|truncatewords:10 }}</p>
+                        </a>
+                {% endfor %}
+            </div>
+        </div>
+            <!--<div class="content__new_1">
                 <p><span>17</span>/10/2021</p>
                 <h3>Современные
                     технологии
@@ -80,9 +87,7 @@
                 <p>
                     С учётом сложившейся международной обстановки, синтетическое тестирование.
                 </p>
-            </div>
-        </div>
-        </div>
+            </div>-->
         <div class="content__header_promo">
             <p class="promo_header">Акции</p>
             <div class="content__promo">
@@ -92,13 +97,4 @@
         </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    <script>
-        var kiev = new DG.GeoPoint(30.523333, 50.450001);
-        var moscow = new DG.GeoPoint(37.617634, 55.755787);
-
-        var distance = DG.Utils.getDistance(kiev, moscow);
-        console.log(distance)
-    </script>
 {% endblock %}

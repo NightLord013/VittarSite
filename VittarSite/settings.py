@@ -13,7 +13,7 @@ SECRET_KEY = 'x6*!+$2unw)ink%^^d=i8xv!g6et43l$akcd7-*dj%6!6tt&tb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.3']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.4']
 
 
 # Application definition
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'UserApp',
     'OrderApp',
+    'NewsApp',
 ]
 
 MIDDLEWARE = [

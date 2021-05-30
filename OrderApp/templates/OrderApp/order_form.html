@@ -45,6 +45,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="distance">
+                    <p>Примерное расстояние между точками, км:</p>
+                    {{ form.distance }}
+                </div>
                 <div class="cargo_description">
                     <div class="cargo_name">
                         <p>Описание груза:</p>
@@ -55,7 +59,7 @@
                         {{ form.cargo_weight }}
                     </div>
                     <div class="cargo_volume">
-                        <p>Введите объем груза, м<sup>2</sup>:</p>
+                        <p>Введите объем груза, м<sup>3</sup>:</p>
                         {{ form.cargo_volume }}
                     </div>
                 </div>
@@ -63,9 +67,35 @@
                     <p>Дополнительные требования:</p>
                     {{ form.additional_requirements }}
                 </div>
+                <div class="price">
+                    <p>Примерная цена доставки:</p>
+                    {{ form.price }} руб.
+                </div>
                 <div class="checkbox"><input type="checkbox" required>Я согласен с условиями обработки персональных данных</div>
                 <div class="submit"><input type="submit" value="Оформить заказ"></div>
             </form>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $('#id_price').val(Number($('#id_distance').val()) + Number($('#id_cargo_weight').val()) + + Number($('#id_cargo_volume').val()))
+    $('#id_distance').on('change',function (e){
+        var distance = $('#id_distance').val() * 10
+        var weight = $('#id_cargo_weight').val() * 1.5
+        var volume = $('#id_cargo_volume').val() * 2
+        $('#id_price').val(Number(distance) + Number(weight) + + Number(volume))
+    })
+    $('#id_cargo_weight').on('change',function (e){
+        var distance = $('#id_distance').val() * 10
+        var weight = $('#id_cargo_weight').val() * 1.5
+        var volume = $('#id_cargo_volume').val() * 2
+        $('#id_price').val(Number(distance) + Number(weight) + + Number(volume))
+    })
+    $('#id_cargo_volume').on('change',function (e){
+        var distance = $('#id_distance').val() * 10
+        var weight = $('#id_cargo_weight').val() * 1.5
+        var volume = $('#id_cargo_volume').val() * 2
+        $('#id_price').val(Number(distance) + Number(weight) + + Number(volume))
+    })
+    </script>
 {% endblock %}

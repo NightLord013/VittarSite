@@ -8,6 +8,7 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/UserApp/base.css' %}">
         <link rel="stylesheet" href="{% block style %}{% endblock %}">
+        <link type="image/png" sizes="32x32" rel="icon" href="{% static 'img/favicon.png' %}">
     </head>
     {% static 'img/Фон.jpg' as bg %}
     <body style="background-image: url({{ bg }})">

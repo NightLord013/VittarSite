@@ -102,7 +102,7 @@ html, body {
     width: 110px;
     background-color: #b1b1b1;
     position: absolute;
-    right: 45px;
+    /* right: 45px; */
     top: 25px;
     z-index: 6;
     color: black;

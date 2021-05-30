@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('OrderApp.urls', namespace='')),
     path('account/', include('UserApp.urls')),
+    path('news/', include('NewsApp.urls')),
 ]

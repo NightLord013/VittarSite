@@ -8,6 +8,7 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/OrderApp/base.css' %}">
         <link rel="stylesheet" href="{% block style %}{% endblock %}">
+        <link type="image/png" sizes="32x32" rel="icon" href="{% static 'img/favicon.png' %}">
     </head>
     <body>
         <div class="wrapper">
@@ -28,13 +29,13 @@
                                     {% endif %}
                                 </li>
                                 <li>
-                                    <a href="#" class="header__link">О компании</a>
+                                    <a href="{% url 'about_company' %}" class="header__link">О компании</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="header__link">Новости</a>
+                                    <a href="{% url 'all_news' %}" class="header__link">Новости</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="header__link">Контакты</a>
+                                    <a href="{% url 'contacts' %}" class="header__link">Контакты</a>
                                 </li>
                                 <li>
                                     {% if user.is_authenticated %}
@@ -53,7 +54,7 @@
                                 <div class="inside__links">
                                     <ul>
                                         <li>
-                                            <a href="#" class="inside__link">
+                                            <a href="{% url 'profile' %}" class="inside__link">
                                                 Профиль
                                             </a>
                                         </li>
@@ -150,5 +151,9 @@
         <!-- Скрипты сайта -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="{% static 'js/base.js' %}"></script>
+        <script>
+            console.log($('.profile').text().trim().length)
+            $('.inside__links').css('right', $('.profile').text().trim().length * 2.5)
+        </script>
     </body>
 </html>

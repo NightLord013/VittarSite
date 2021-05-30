@@ -1,5 +1,5 @@
 .content {
-    padding: 130px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
     display: grid;
     margin: 0 auto;
     max-width: 1180px;
@@ -87,16 +87,17 @@
 
 .order__block_3 p:last-child {
     color: #b0b0b0;
-    display: flex;
-    align-items: center;
+    display: inline-block;
     width: 180px;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 .order__block_3 p:last-child img {
+    position: relative;
     width: 20px;
     margin-right: 5px;
     margin-left: 7px;
+    top: 5px
 }
 
 .empty {
@@ -109,11 +110,16 @@
     .order {
         grid-template-columns: none;
     }
+
+    .more {
+        display: none;
+    }
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1060px) {
     .order__block_3 p:last-child {
-        width: 120px;
-        margin-right: 20px;
+        width: 130px;
+        margin-right: 10px;
+        font-size: 14px;
     }
 }

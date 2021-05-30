@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Order
+from NewsApp.models import News
 from .forms import OrderForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
     """Гланая страница"""
-    return render(request, 'OrderApp/home.html')
+    news = News.objects.all()[:2]
+    return render(request, 'OrderApp/home.html', {'news': news})
 
 @login_required
 def user_orders(request):
@@ -38,9 +40,12 @@ def order_form(request):
     """Страница заказа услуги"""
     if request.method == 'POST':
         form = OrderForm(request.POST, initial={'user': request.user})
+        print(request.POST)
         if form.is_valid():
             form.save()
             return redirect('user_orders')
+        else:
+            print(form.errors)
     else:
         form = OrderForm(initial={'user': request.user})
     return render(request, 'OrderApp/order_form.html', {'form': form})
@@ -80,3 +85,9 @@ def order_deny(request, order_id):
     order.order_stage = 'О'
     order.save()
     return redirect('all_orders')
+
+def about_company(request):
+    return render(request, 'OrderApp/about_company.html')
+
+def contacts(request):
+    return render(request, 'OrderApp/contacts.html')
