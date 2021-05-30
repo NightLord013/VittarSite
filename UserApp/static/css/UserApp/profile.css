@@ -1,0 +1,49 @@
+.content {
+    padding: 100px 0px 0px 0px;
+    display: grid;
+    margin: 0 auto;
+    max-width: 1180px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.content__header {
+    overflow: hidden;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content__header span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.content__header:before,
+.content__header:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 3px;
+    background-color: black;
+    position: relative;
+}
+
+.content__header:before {
+    margin-left: -100%;
+    left: -2px;
+}
+
+.content__header:after {
+    margin-right: -100%;
+    right: -2px;
+}
+
+.content__body h1 {
+    margin-bottom: 10px;
+}
+
+.content__body p {
+    font-size: 25px;
+}

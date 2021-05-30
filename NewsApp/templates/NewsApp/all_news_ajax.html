@@ -1,0 +1,10 @@
+{% load static %}
+{% load extra_filters %}
+
+{% for item in news %}
+    <a href="#" class="item">
+        <p class="create_date"><span>{{ item.create_date.day }}</span>/{{ item.create_date|date:'m/Y' }}</p>
+        <h3 class="news_title">{{ item.title }}</h3>
+        <p class="news_body">{{ item.body|truncatewords:10 }}</p>
+    </a>
+{% endfor %}

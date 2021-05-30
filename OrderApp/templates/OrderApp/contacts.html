@@ -1,0 +1,28 @@
+{% extends 'OrderApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Главная - Vittar{% endblock %}
+{% block style %}{% static 'css/OrderApp/contacts.css' %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h3 class="content__header">
+            <span>Контакты</span>
+        </h3>
+        <div class="content__body">
+            <p>Общество с Ограниченной Ответственностью «Виттар» основано в 2009 году</p>
+            <p>ИНН 1650195687 / ОГРН 1091650008890</p>
+            <span>Контактная информация:</span>
+            <ul>
+                <li>тел./факс: +7 (8552) 33-07-06, +7 (8552) 46-63-23</li>
+                <li>ICQ ICQ594282788</li>
+                <li>e-mail: mail@vittar.ru</li>
+            </ul>
+            <span>Юридический адрес:</span>
+            <p>423806, РТ, г. Набережные Челны, ул. Низаметдинова, д.8</p>
+            <span>Почтовый адрес:</span>
+            <p>423806, РТ, г. Набережные Челны, ул. Низаметдинова, д.8 офис 106</p>
+        </div>
+    </div>
+{% endblock %}

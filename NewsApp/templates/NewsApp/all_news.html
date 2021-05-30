@@ -1,0 +1,22 @@
+{% extends 'OrderApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Новости - Vittar{% endblock %}
+{% block style %}{% static 'css/NewsApp/all_news.css' %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h3 class="content__header">
+            <span>Новости</span>
+        </h3>
+        <div class="content__body">
+            <div class="news">
+                {% include 'NewsApp/all_news_ajax.html' %}
+            </div>
+        </div>
+    </div>
+    <!-- Скрипты -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/NewsApp/ajax.js' %}"></script>
+{% endblock %}

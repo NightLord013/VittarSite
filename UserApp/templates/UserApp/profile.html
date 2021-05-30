@@ -1,0 +1,21 @@
+{% extends 'OrderApp/base.html' %}
+
+{% load static %}
+
+{% block title %}Главная - Vittar{% endblock %}
+{% block style %}{% static 'css/UserApp/profile.css' %}{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h3 class="content__header">
+            <span>Профиль</span>
+        </h3>
+        <div class="content__body">
+            <h1>{{ user.full_name }} ({{ user.company_name }})</h1>
+
+            <p>Телефон: {{ user.phone }}</p>
+            <p>Почта: {{ user.email }}</p>
+            <p>Всего заказов: {{ order_count.count }}</p>
+        </div>
+    </div>
+{% endblock %}
